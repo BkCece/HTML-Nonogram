@@ -1,0 +1,22 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 5px 5px 5px;
+}
+
+#one {
+    background-color: black;
+    color: black;
+}
+
+#zero {
+    background-color: aliceblue;
+    color: aliceblue;
+}
+
+#guide {
+    background-color: coral;
+    color: black;
+}
