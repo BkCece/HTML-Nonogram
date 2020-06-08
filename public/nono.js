@@ -145,6 +145,29 @@ function toggleAnswerTable() {
     }
 }
 
+function submitAnswer() {
+    var correct = false;
+    for (var i = 0; i < tableUser.length; i++) {
+        for (var j = 0; j < tableUser[i].length; j++) {
+            if (tableUser[i][j] == tableAnswer[i][j]) {
+                correct = true;
+            } else {
+                correct = false;
+                break;
+            }
+        }
+        if (!correct) {
+            break;
+        }
+    }
+
+    if (correct) {
+        alert("CORRECT!!!!");
+    } else {
+        alert("WRONG >.<");
+    }
+}
+
 document.getElementById("text").innerHTML = "Here we go!";
 document.getElementById("userTable").innerHTML = createUserTable(tableUser);
 document.getElementById("answerTable").innerHTML = createTable(tableAnswer);
