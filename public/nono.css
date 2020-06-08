@@ -1,3 +1,11 @@
+h1,
+h2,
+h3 {
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+}
+
 table,
 th,
 td {
@@ -6,9 +14,30 @@ td {
     padding: 5px 5px 5px 5px;
 }
 
+#nonograms,
+#buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+}
+
+#answerTable,
+#userTable,
+#displayAnswer,
+#showAnswer,
+#restNono {
+    display: flex;
+    flex-direction: column;
+}
+
 #one {
     background-color: black;
     color: black;
+}
+
+#zero:hover,
+button:hover {
+    background-color: darksalmon;
 }
 
 #zero {
@@ -17,7 +46,15 @@ td {
 }
 
 #guide {
-    background-color: coral;
+    background-color: indianred;
     color: black;
     font-weight: bold;
+}
+
+button {
+    background-color: indianred;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-size: large;
 }

@@ -6,15 +6,19 @@
 </head>
 
 <body>
-
-    <p id="text">Hello World!</p>
-    <p id="answerTable"></p>
-    <p id="userTable">Empty user table should display here!</p>
+    <h1>Welcome to my Nonogram Application!</h1>
+    <h3>Good Luck ^_^</h3>
 
     <div id="buttons">
         <button type="button" id=submitAnswer onclick="submitAnswer()">Submit Answer</button>
         <button type="button" id=showAnswer onclick="toggleAnswerTable()">Show Answer</button>
         <button type="reset" id=resetNono onclick="clearUserTable()">Reset</button>
+    </div>
+    <p>&nbsp;</p>
+
+    <div id="nonograms">
+        <div id="answerTable"></div>
+        <div id="userTable">Empty user table should display here!</div>
     </div>
 
     <script src="nono.js "></script>

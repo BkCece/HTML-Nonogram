@@ -61,18 +61,18 @@ function createTable(tbl) {
             if ((i < 4) || (j < 4)) {
                 if (tbl[i][j] == 0) {
                     //don't display a number if value is zero
-                    newTable += "<td id = guide> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=guide> &nbsp; &nbsp; &nbsp; </td>";
                 } else {
                     //display when the number is used as a guide for the puzzle
-                    newTable += "<td id = guide> &nbsp;" + tbl[i][j] + "&nbsp; </td>";
+                    newTable += "<td id=guide> &nbsp;" + tbl[i][j] + "&nbsp; </td>";
                 }
 
             } else {
                 //different id's to set cell colours if toggles/not
                 if (tbl[i][j] == 1) {
-                    newTable += "<td id = one> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=one> &nbsp; &nbsp; &nbsp; </td>";
                 } else {
-                    newTable += "<td id = zero> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=zero> &nbsp; &nbsp; &nbsp; </td>";
                 }
             }
 
@@ -92,16 +92,16 @@ function createUserTable(tbl) {
         for (var j = 0; j < tbl[i].length; j++) {
             if ((i < 4) || (j < 4)) {
                 if (tbl[i][j] == 0) {
-                    newTable += "<td id = guide> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=guide> &nbsp; &nbsp; &nbsp; </td>";
                 } else {
-                    newTable += "<td id = guide> &nbsp;" + tbl[i][j] + "&nbsp; </td>";
+                    newTable += "<td id=guide> &nbsp;" + tbl[i][j] + "&nbsp; </td>";
                 }
 
             } else {
                 if (tbl[i][j] == 1) {
-                    newTable += "<td id = one onclick='toggleCell(" + i + ", " + j + "); return false;'> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=one onclick='toggleCell(" + i + ", " + j + "); return false;'> &nbsp; &nbsp; &nbsp; </td>";
                 } else {
-                    newTable += "<td id = zero onclick='toggleCell(" + i + ", " + j + "); return false;'> &nbsp; &nbsp; &nbsp; </td>";
+                    newTable += "<td id=zero onclick='toggleCell(" + i + ", " + j + "); return false;'> &nbsp; &nbsp; &nbsp; </td>";
                 }
             }
 
@@ -168,7 +168,6 @@ function submitAnswer() {
     }
 }
 
-document.getElementById("text").innerHTML = "Here we go!";
 document.getElementById("userTable").innerHTML = createUserTable(tableUser);
 document.getElementById("answerTable").innerHTML = createTable(tableAnswer);
 document.getElementById("answerTable").style.display = "none";
