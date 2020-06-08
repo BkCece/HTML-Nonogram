@@ -1,21 +1,23 @@
-h1,
-h2,
-h3 {
-    flex-direction: row;
-    justify-content: space-around;
-    display: flex;
+ul,
+li {
+    text-align: center;
+    list-style: inside;
+    font-size: medium;
 }
 
 table,
 th,
 td {
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: brown;
     border-collapse: collapse;
     padding: 5px 5px 5px 5px;
 }
 
 #nonograms,
-#buttons {
+#buttons,
+h1,
+h4 {
     flex-direction: row;
     justify-content: space-around;
     display: flex;
@@ -25,7 +27,8 @@ td {
 #userTable,
 #displayAnswer,
 #showAnswer,
-#restNono {
+#resetNono,
+#changeNono {
     display: flex;
     flex-direction: column;
 }
@@ -38,6 +41,10 @@ td {
 #zero:hover,
 button:hover {
     background-color: darksalmon;
+}
+
+#one:hover {
+    background-color: brown;
 }
 
 #zero {
@@ -54,7 +61,20 @@ button:hover {
 button {
     background-color: indianred;
     border: none;
-    padding: 10px 20px 10px 20px;
+    padding: 20px 30px 20px 30px;
     color: white;
     font-size: large;
+}
+
+body {
+    background-image: url("winter_willow.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#textNono {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    background-blend-mode: multiply;
+    margin: 30px 100px 30px 100px;
 }

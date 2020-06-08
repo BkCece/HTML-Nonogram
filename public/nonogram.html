@@ -6,11 +6,24 @@
 </head>
 
 <body>
-    <h1>Welcome to my Nonogram Application!</h1>
-    <h3>Good Luck ^_^</h3>
+    <div id="textNono">
+        <h1>Welcome to my Nonogram Application!</h1>
+        <ul>
+            <li>
+                The harder puzzle starts out with all empty white tiles, while the easier puzzle starts all filled in.
+            </li>
+            <li>
+                The easier puzzle is faster to complete, but remember that the numbers correspond to the black tiles, not the white ones.
+            </li>
+            <li>
+                For easy of play, an alert will notify you when you are correct: no submitting necessary!
+            </li>
+        </ul>
+        <h4>Good Luck ^_^</h4>
+    </div>
 
     <div id="buttons">
-        <button type="button" id=submitAnswer onclick="submitAnswer()">Submit Answer</button>
+        <button type="button" id="changeNono" onclick="changeNono()">Change Puzzle</button>
         <button type="button" id=showAnswer onclick="toggleAnswerTable()">Show Answer</button>
         <button type="reset" id=resetNono onclick="clearUserTable()">Reset</button>
     </div>
