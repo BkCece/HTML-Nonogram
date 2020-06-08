@@ -108,7 +108,7 @@ function toggleCell(r, c) {
         tableUser[r][c] = 0;
     }
 
-    document.getElementById("p2").innerHTML = createUserTable(tableUser);
+    document.getElementById("userTable").innerHTML = createUserTable(tableUser);
 }
 
 function clearTable(tbl) {
@@ -137,8 +137,18 @@ function clearTable(tbl) {
     return newTable;
 }
 
+function toggleAnswerTable() {
+    var tbl = document.getElementById("answerTable");
+    if (tbl.style.display === "none") {
+        tbl.style.display = "block";
+
+    } else {
+        tbl.style.display = "none";
+    }
+}
+
 var htmltableAnswer = createTable(tableAnswer);
-document.getElementById("p1").innerHTML = "Here we go!";
-document.getElementById("p2").innerHTML = createUserTable(tableUser);
-document.getElementById("p3").innerHTML = createTable(tableAnswer);
-document.getElementById("p4").innerHTML = clearTable(tableAnswer);
+document.getElementById("text").innerHTML = "Here we go!";
+document.getElementById("userTable").innerHTML = createUserTable(tableUser);
+document.getElementById("answerTable").innerHTML = htmltableAnswer;
+document.getElementById("answerTable").style.display = "none";

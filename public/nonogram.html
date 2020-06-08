@@ -7,12 +7,18 @@
 
 <body>
 
-    <p id="p1">Hello World!</p>
-    <p id="p2">Empty user table should display here!</p>
-    <p id="p3">Answer table should display here!</p>
-    <p id="p4">Cleared answer table should display here!</p>
+    <p id="text">Hello World!</p>
+    <p id="userTable">Empty user table should display here!</p>
 
-    <script src="nono.js"></script>
+    <div id="buttons">
+        <button type="submit" id=submitAnswer>Submit Answer</button>
+        <button type="button" onclick="toggleAnswerTable()" id=showAnswer>Show Answer</button>
+        <button type="reset" id=resetNono>Reset</button>
+    </div>
+
+    <p id="answerTable"></p>
+
+    <script src="nono.js "></script>
 
 </body>
 
