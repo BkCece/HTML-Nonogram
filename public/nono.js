@@ -2,8 +2,12 @@
 //1: the tile should be shown black
 //2: the tile should be shown white
 //Size is 15x15 and has 4 additional rows & columns for the hint values
-
+var multilineOn = false;
 var hardPuzzleChosen = true;
+var multiStartRow = -1;
+var multiStartCol = -1;
+var multiEndRow = -1;
+var multiEndCol = -1;
 
 //Nonogram design from http://nonogramskatana.blogspot.com/2016/05/15x15-mouse.html
 //Default puzzle is the harder puzzle
@@ -217,10 +221,64 @@ function createUserTable(tbl) {
 //Sets cell value to zero if 1, and to 1 of zero
 //Toggles cell value and re-displays table with new cell values
 function toggleCell(r, c) {
-    if (tableUser[r][c] == 0) {
-        tableUser[r][c] = 1;
+    if (multilineOn) {
+        //for selecting multiple lines
+        //Need mult start and end to be set
+        //If both have values, fill tiles
+        //otherwise, wait
+        if (multiStartRow == -1 || multiStartCol == -1) {
+            //set multistart
+            multiStartRow = r;
+            multiStartCol = c;
+        } else {
+            //set multiend
+            if (multiEndRow == -1 || multiEndCol == -1) {
+                multiEndRow = r;
+                multiEndCol = c;
+                //Need either row or column of start & end to be the same to multiselect
+                if ((multiStartRow == multiEndRow) || (multiStartCol == multiEndCol)) {
+
+                    if (multiStartRow == multiEndRow) {
+                        //fill a row
+                        if (multiStartCol < multiEndCol) {
+                            //left to right
+                            for (var i = multiStartCol; i <= multiEndCol; i++) {
+                                if (tableUser[multiStartRow][i] == 0) {
+                                    tableUser[multiStartRow][i] = 1;
+                                } else {
+                                    tableUser[multiStartRow][i] = 0;
+                                }
+                            }
+                        } else if (multiStartCol > multiEndCol) {
+                            //left to right
+                            for (var i = multiEndCol; i <= multiStartCol; i++) {
+                                if (tableUser[multiStartRow][i] == 0) {
+                                    tableUser[multiStartRow][i] = 1;
+                                } else {
+                                    tableUser[multiStartRow][i] = 0;
+                                }
+                            }
+                        }
+                    } else if (multiStartCol == multiEndCol) {
+                        //fill col
+                    }
+                }
+
+                //reset multistart and multiend
+                multiStartRow = -1;
+                multiStartCol = -1;
+                multiEndRow = -1;
+                multiEndCol = -1;
+            }
+        }
+
     } else {
-        tableUser[r][c] = 0;
+        //Single cell click
+        if (tableUser[r][c] == 0) {
+            tableUser[r][c] = 1;
+        } else {
+            tableUser[r][c] = 0;
+        }
     }
 
     document.getElementById("userTable").innerHTML = createUserTable(tableUser);
@@ -306,6 +364,17 @@ function changeNono() {
 
     document.getElementById("userTable").innerHTML = createUserTable(tableUser);
     document.getElementById("answerTable").innerHTML = createTable(tableAnswer);
+}
+
+//Switches selection method to multiline
+//Requires the user to click for start end and of selection
+//Affects toggleCell function
+function toggleSelect() {
+    if (multilineOn) {
+        multilineOn = false;
+    } else {
+        multilineOn = true;
+    }
 }
 
 document.getElementById("userTable").innerHTML = createUserTable(tableUser);

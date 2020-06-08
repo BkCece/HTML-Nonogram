@@ -75,6 +75,6 @@ body {
 #textNono {
     background-color: white;
     padding: 10px 10px 10px 10px;
-    background-blend-mode: multiply;
     margin: 30px 100px 30px 100px;
+    opacity: 80%;
 }
