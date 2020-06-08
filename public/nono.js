@@ -261,6 +261,25 @@ function toggleCell(r, c) {
                         }
                     } else if (multiStartCol == multiEndCol) {
                         //fill col
+                        if (multiStartRow < multiEndRow) {
+                            //top to bot
+                            for (var i = multiStartRow; i <= multiEndRow; i++) {
+                                if (tableUser[i][multiStartCol] == 0) {
+                                    tableUser[i][multiStartCol] = 1;
+                                } else {
+                                    tableUser[i][multiStartCol] = 0;
+                                }
+                            }
+                        } else if (multiStartRow > multiEndRow) {
+                            //bot to top
+                            for (var i = multiEndRow; i <= multiStartRow; i++) {
+                                if (tableUser[i][multiStartCol] == 0) {
+                                    tableUser[i][multiStartCol] = 1;
+                                } else {
+                                    tableUser[i][multiStartCol] = 0;
+                                }
+                            }
+                        }
                     }
                 }
 
