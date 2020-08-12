@@ -1,3 +1,16 @@
+# HTML_Nonogram
+
+## To be added/refactored:
+- This game has not yet been refactored!
+- Need to alter nonogram answer storage method:
+  - Switch to json file database instead of 2D arrays
+- Fix error with game replayability 
+  - Clearing after game is won breaks the game
+  - Issue is with arrays being overwritten
+- Maybe: add the ability to read a nonogram from a json file
+
+
+
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
